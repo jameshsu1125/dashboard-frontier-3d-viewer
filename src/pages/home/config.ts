@@ -1,11 +1,20 @@
 import { createContext, Dispatch, SetStateAction } from 'react';
 
-export enum HomeStepType {
-  unset = 0,
-  fadeIn = 1,
-}
-export type THomeState = { step: HomeStepType };
+export type HomeMap = string | undefined;
+export type THomeState = {
+  normalMap: HomeMap;
+  alphaMap: HomeMap;
+  bumpMap: HomeMap;
+  bumpScale: number;
+};
+
 export type THomeContext = [THomeState, Dispatch<SetStateAction<THomeState>>];
 
-export const HomeState = { step: HomeStepType.unset };
+export const HomeState = {
+  normalMap: undefined,
+  alphaMap: undefined,
+  bumpMap: undefined,
+  bumpScale: 40,
+};
+
 export const HomeContext = createContext<THomeContext>([HomeState, () => {}]);

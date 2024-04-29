@@ -15,6 +15,6 @@ export const REST_PATH = {
 };
 
 export const CAPTURE_PROPERTY = {
-  maxWidth: 500,
+  maxWidth: 2048,
   compress: 0.5,
 };
