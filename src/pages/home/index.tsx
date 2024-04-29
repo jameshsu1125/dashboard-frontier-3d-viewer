@@ -28,7 +28,6 @@ const Home = memo(() => {
   useEffect(() => {
     if (ref.current) {
       ref.current.setProps(props);
-      console.log(props);
     }
   }, [props]);
 
