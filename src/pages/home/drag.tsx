@@ -5,10 +5,9 @@ import { useDebounce } from 'use-debounce';
 
 const Drag = memo(() => {
   const [state, setState] = useContext(HomeContext);
-
   const [scale, setScale] = useState(state.bumpScale);
-
   const [value] = useDebounce(scale, 1000);
+
   useEffect(() => {
     setState((S) => ({ ...S, bumpScale: value }));
   }, [value]);
@@ -36,10 +35,10 @@ const Drag = memo(() => {
           type='range'
           min={0}
           max='100'
-          defaultValue={state.bumpScale}
+          defaultValue={state.bumpScale * 100}
           className='range range-primary'
           onChange={(e) => {
-            setScale(Number(e.target.value));
+            setScale(Number(e.target.value) / 100);
           }}
         />
       </div>
