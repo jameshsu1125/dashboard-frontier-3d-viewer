@@ -10,8 +10,7 @@
     "preview": "vite preview",
     "rm": "rm -rf node_modules/ dist/ package-lock.json",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "deploy": "NODE_ENV=production netlify deploy --dir=dist",
-    "deploy:prod": "NODE_ENV=production netlify deploy --dir=dist --prod",
+    "deploy": "NODE_ENV=production netlify deploy --dir=dist --prod",
     "serve": "NODE_ENV=local netlify dev --dir=dist"
   },
   "dependencies": {
@@ -21,11 +20,11 @@
     "cloudinary": "^2.2.0",
     "draft-js": "^0.11.7",
     "draft-js-export-html": "^1.4.1",
-    "frontier-3d-viewer": "^0.0.47",
+    "frontier-3d-viewer": "^0.0.48",
     "lesca-fetcher": "^1.1.7",
     "lesca-local-storage": "^1.1.2",
     "lesca-react-capture-button": "^2.1.4",
-    "lesca-react-onload": "^1.0.15",
+    "lesca-react-onload": "^1.0.17",
     "lesca-use-tween": "^3.0.8",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

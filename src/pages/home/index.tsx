@@ -5,7 +5,7 @@ import Drag from './drag';
 import './index.less';
 
 type TUserProps = {
-  normal: string;
+  base: string;
   alpha?: string;
   bump?: string;
   bumpScale?: number;
@@ -17,7 +17,7 @@ const Home = memo(() => {
 
   const props = useMemo(() => {
     const p: TUserProps = {
-      normal: state.normalMap || '',
+      base: state.normalMap || '',
       bumpScale: state.bumpScale,
     };
     if (state.alphaMap) p.alpha = state.alphaMap;
