@@ -31,16 +31,24 @@ const Drag = memo(() => {
       </Upload>
       <div className='flex w-full flex-col space-y-2 py-2'>
         <label>Bump Scale</label>
-        <input
-          type='range'
-          min={0}
-          max='100'
-          defaultValue={state.bumpScale * 100}
-          className='range range-primary'
-          onChange={(e) => {
-            setScale(Number(e.target.value) / 100);
-          }}
-        />
+        <div className='join flex flex-col space-y-2'>
+          <input
+            type='range'
+            min={0}
+            max='100'
+            defaultValue={state.bumpScale * 100}
+            className='range range-primary'
+            onChange={(e) => {
+              setScale(Number(e.target.value) / 100);
+            }}
+          />
+          <input
+            type='number'
+            value={value}
+            className='input input-primary'
+            onChange={(e) => setScale(Number(e.target.value))}
+          />
+        </div>
       </div>
     </div>
   );

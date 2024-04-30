@@ -14,7 +14,7 @@ export const HomeState = {
   normalMap: undefined,
   alphaMap: undefined,
   bumpMap: undefined,
-  bumpScale: 0.2,
+  bumpScale: 0.05,
 };
 
 export const HomeContext = createContext<THomeContext>([HomeState, () => {}]);

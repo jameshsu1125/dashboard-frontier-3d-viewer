@@ -46,7 +46,7 @@ const Home = memo(() => {
         <div id='app'></div>
         <Draggable
           handle='.handle'
-          defaultPosition={{ x: window.innerWidth - 320, y: window.innerHeight - 448 }}
+          defaultPosition={{ x: window.innerWidth - 320, y: window.innerHeight - 500 }}
           scale={1}
         >
           <div className='w-80 bg-base-100 p-1 drop-shadow-2xl'>
