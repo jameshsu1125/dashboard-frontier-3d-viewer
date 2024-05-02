@@ -22,6 +22,7 @@ const Home = memo(() => {
     };
     if (state.alphaMap) p.alpha = state.alphaMap;
     if (state.bumpMap) p.bump = state.bumpMap;
+
     return p;
   }, [state]);
 
@@ -46,7 +47,7 @@ const Home = memo(() => {
         <div id='app'></div>
         <Draggable
           handle='.handle'
-          defaultPosition={{ x: window.innerWidth - 320, y: window.innerHeight - 500 }}
+          defaultPosition={{ x: window.innerWidth - 320, y: 80 }}
           scale={1}
         >
           <div className='w-80 bg-base-100 p-1 drop-shadow-2xl'>

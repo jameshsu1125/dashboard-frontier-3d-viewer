@@ -1,12 +1,12 @@
 import { memo, useContext, useEffect, useState } from 'react';
+import { useDebounce } from 'use-debounce';
 import { HomeContext } from './config';
 import Upload from './upload';
-import { useDebounce } from 'use-debounce';
 
 const Drag = memo(() => {
   const [state, setState] = useContext(HomeContext);
   const [scale, setScale] = useState(state.bumpScale);
-  const [value] = useDebounce(scale, 1000);
+  const [value] = useDebounce(scale, 100);
 
   useEffect(() => {
     setState((S) => ({ ...S, bumpScale: value }));

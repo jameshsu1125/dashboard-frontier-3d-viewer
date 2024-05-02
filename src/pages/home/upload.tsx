@@ -1,7 +1,7 @@
 import Button from '@/components/button';
 import { CAPTURE_PROPERTY } from '@/settings/config';
 import { IReactProps } from '@/settings/type';
-import CaptureProvider from 'lesca-react-capture-button';
+import CaptureProvider, { DOMString } from 'lesca-react-capture-button';
 import { TResult } from 'lesca-react-capture-button/lib/type';
 import { memo } from 'react';
 import { FaImage } from 'react-icons/fa6';
@@ -21,6 +21,7 @@ const Upload = memo(({ children, uri, onCapture }: T) => {
         <CaptureProvider
           maxWidth={CAPTURE_PROPERTY.maxWidth}
           compress={CAPTURE_PROPERTY.compress}
+          type={DOMString.png}
           onCapture={onCapture}
         >
           <Button className='btn-block'>

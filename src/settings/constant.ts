@@ -88,5 +88,6 @@ export const Reducer = (state: IState, action: IAction): IState => {
 const error = console.error;
 console.error = (...args: any) => {
   if (/findDOMNode/.test(args[0])) return;
+  if (/defaultProps/.test(args[0])) return;
   error(...args);
 };
