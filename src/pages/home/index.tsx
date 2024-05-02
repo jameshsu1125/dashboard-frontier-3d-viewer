@@ -9,6 +9,9 @@ type TUserProps = {
   alpha?: string;
   bump?: string;
   bumpScale?: number;
+  dispImgUrl?: string;
+  roughImgUrl?: string;
+  normalImgUrl?: string;
 };
 
 const Home = memo(() => {
@@ -17,11 +20,14 @@ const Home = memo(() => {
 
   const props = useMemo(() => {
     const p: TUserProps = {
-      base: state.normalMap || '',
+      base: state.baseMap || '',
       bumpScale: state.bumpScale,
     };
     if (state.alphaMap) p.alpha = state.alphaMap;
     if (state.bumpMap) p.bump = state.bumpMap;
+    if (state.normalMap) p.normalImgUrl = state.baseMap;
+    if (state.roughnessMap) p.roughImgUrl = state.roughnessMap;
+    if (state.displacementMap) p.dispImgUrl = state.displacementMap;
 
     return p;
   }, [state]);

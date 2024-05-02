@@ -14,7 +14,7 @@ type T = IReactProps & {
 
 const Upload = memo(({ children, uri, onCapture }: T) => {
   return (
-    <div className={twMerge('flex w-full flex-row items-center space-x-2 py-4')}>
+    <div className={twMerge('flex w-full flex-row items-center space-x-2 py-2')}>
       {uri && <img className='h-20 w-20' src={uri} />}
       <div className='flex flex-1 flex-col space-y-2'>
         <h1 className='w-full text-center text-sm font-bold'>{children}</h1>
