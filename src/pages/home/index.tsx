@@ -1,5 +1,7 @@
+import Button from '@/components/button';
 import { memo, useEffect, useMemo, useRef, useState } from 'react';
 import Draggable from 'react-draggable';
+import { BsArrowsExpand } from 'react-icons/bs';
 import { HomeContext, HomeState, THomeState } from './config';
 import Drag from './drag';
 import './index.less';
@@ -47,6 +49,8 @@ const Home = memo(() => {
     callFunction();
   }, []);
 
+  const [open, setOpen] = useState(true);
+
   return (
     <div className='Home'>
       <HomeContext.Provider value={[state, setState]}>
@@ -57,10 +61,16 @@ const Home = memo(() => {
           scale={1}
         >
           <div className='w-80 bg-base-100 p-1 drop-shadow-2xl'>
-            <div className='handle w-full cursor-grab bg-base-200 text-center font-bold capitalize active:cursor-grabbing'>
+            <div className='handle relative w-full cursor-grab bg-base-200 text-center font-bold capitalize active:cursor-grabbing'>
               set material mapping props
+              <Button
+                className='absolute right-0 top-0 h-6 min-h-6 w-6 bg-primary p-0'
+                onClick={() => setOpen((S) => !S)}
+              >
+                <BsArrowsExpand />
+              </Button>
             </div>
-            <Drag />
+            {open && <Drag />}
           </div>
         </Draggable>
       </HomeContext.Provider>

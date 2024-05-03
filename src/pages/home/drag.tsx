@@ -14,38 +14,51 @@ const Drag = memo(() => {
 
   return (
     <div className='w-full cursor-auto px-5 py-2'>
-      <Upload uri={state.baseMap} onCapture={(e) => setState((S) => ({ ...S, baseMap: e.image }))}>
-        Upload Base Mapping
+      <Upload
+        uri={state.baseMap}
+        onCancel={() => setState((S) => ({ ...S, baseMap: undefined }))}
+        onCapture={(e) => setState((S) => ({ ...S, baseMap: e.image }))}
+      >
+        Base Mapping
       </Upload>
       <Upload
         uri={state.alphaMap}
+        onCancel={() => setState((S) => ({ ...S, alphaMap: undefined }))}
         onCapture={(e) => setState((S) => ({ ...S, alphaMap: e.image }))}
       >
-        Upload Alpha Mapping
+        Alpha Mapping
       </Upload>
-      <Upload uri={state.bumpMap} onCapture={(e) => setState((S) => ({ ...S, bumpMap: e.image }))}>
+      <Upload
+        uri={state.bumpMap}
+        onCancel={() => setState((S) => ({ ...S, bumpMap: undefined }))}
+        onCapture={(e) => setState((S) => ({ ...S, bumpMap: e.image }))}
+      >
         Upload Bump Mapping
       </Upload>
       <Upload
         uri={state.displacementMap}
+        onCancel={() => setState((S) => ({ ...S, displacementMap: undefined }))}
         onCapture={(e) => setState((S) => ({ ...S, displacementMap: e.image }))}
       >
         Upload Displacement Map
       </Upload>
       <Upload
         uri={state.roughnessMap}
+        onCancel={() => setState((S) => ({ ...S, roughnessMap: undefined }))}
         onCapture={(e) => setState((S) => ({ ...S, roughnessMap: e.image }))}
       >
         Upload Roughness Map
       </Upload>
       <Upload
         uri={state.normalMap}
+        onCancel={() => setState((S) => ({ ...S, normalMap: undefined }))}
         onCapture={(e) => setState((S) => ({ ...S, normalMap: e.image }))}
       >
         Upload Normal Map
       </Upload>
       <Upload
         uri={state.roughnessMap}
+        onCancel={() => setState((S) => ({ ...S, roughnessMap: undefined }))}
         onCapture={(e) => setState((S) => ({ ...S, roughnessMap: e.image }))}
       >
         Upload Roughness Map
