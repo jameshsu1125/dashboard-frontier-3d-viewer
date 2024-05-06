@@ -6,7 +6,7 @@ import { HomeContext, HomeState, THomeState } from './config';
 import Drag from './drag';
 import './index.less';
 
-type TUserProps = {
+export type TUserProps = {
   base: string;
   alpha?: string;
   bump?: string;
@@ -27,7 +27,7 @@ const Home = memo(() => {
     };
     if (state.alphaMap) p.alpha = state.alphaMap;
     if (state.bumpMap) p.bump = state.bumpMap;
-    if (state.normalMap) p.normalImgUrl = state.baseMap;
+    if (state.normalMap) p.normalImgUrl = state.normalMap;
     if (state.roughnessMap) p.roughImgUrl = state.roughnessMap;
     if (state.displacementMap) p.dispImgUrl = state.displacementMap;
 

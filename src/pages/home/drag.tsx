@@ -1,6 +1,6 @@
 import { memo, useContext, useEffect, useState } from 'react';
 import { useDebounce } from 'use-debounce';
-import { HomeContext } from './config';
+import { HomeContext, THomeState } from './config';
 import Upload from './upload';
 
 const Drag = memo(() => {
@@ -11,6 +11,20 @@ const Drag = memo(() => {
   useEffect(() => {
     setState((S) => ({ ...S, bumpScale: value }));
   }, [value]);
+
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.target;
+    const index = Number(value) + 1;
+
+    const data: Omit<THomeState, 'alphaMap' | 'bumpMap' | 'bumpScale'> = {
+      baseMap: `/3d-viewer/mapping/0${index}/base.jpg`,
+      normalMap: `/3d-viewer/mapping/0${index}/nrm.jpg`,
+      roughnessMap: `/3d-viewer/mapping/0${index}/rough.jpg`,
+      displacementMap: `/3d-viewer/mapping/0${index}/disp.jpg`,
+    };
+
+    setState((S) => ({ ...S, ...data }));
+  };
 
   return (
     <div className='w-full cursor-auto px-5 py-2'>
@@ -83,6 +97,27 @@ const Drag = memo(() => {
             className='input input-primary'
             onChange={(e) => setScale(Number(e.target.value))}
           />
+        </div>
+      </div>
+      <div className='flex w-full flex-col space-y-2 py-2'>
+        <label>Testing Material Groups</label>
+        <div className='flex w-full'>
+          {[...new Array(4).keys()].map((i) => {
+            return (
+              <div key={i} className='form-control'>
+                <label className='label flex cursor-pointer flex-col space-y-2'>
+                  <span className='label-text'>{`image${i}`}</span>
+                  <input
+                    type='radio'
+                    name='material'
+                    className='radio checked:bg-blue-500'
+                    onChange={onChange}
+                    value={i}
+                  />
+                </label>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>

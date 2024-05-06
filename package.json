@@ -11,7 +11,8 @@
     "rm": "rm -rf node_modules/ dist/ package-lock.json",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "deploy": "NODE_ENV=production netlify deploy --dir=dist --prod",
-    "serve": "NODE_ENV=local netlify dev --dir=dist"
+    "serve": "NODE_ENV=local netlify dev --dir=dist",
+    "copy": "cp -R ./node_modules/frontier-3d-viewer/lib/3d-viewer ./public"
   },
   "dependencies": {
     "@faker-js/faker": "^8.4.1",
@@ -20,7 +21,7 @@
     "cloudinary": "^2.2.0",
     "draft-js": "^0.11.7",
     "draft-js-export-html": "^1.4.1",
-    "frontier-3d-viewer": "^0.0.58",
+    "frontier-3d-viewer": "^0.0.67",
     "lesca-fetcher": "^1.1.7",
     "lesca-local-storage": "^1.1.2",
     "lesca-react-capture-button": "^2.1.4",
@@ -39,7 +40,7 @@
     "use-debounce": "^10.0.0"
   },
   "devDependencies": {
-    "@netlify/functions": "^2.6.0",
+    "@netlify/functions": "^2.6.3",
     "@tailwindcss/typography": "^0.5.13",
     "@types/cors": "^2.8.17",
     "@types/draft-js": "^0.11.18",
@@ -55,7 +56,7 @@
     "autoprefixer": "^10.4.19",
     "concurrently": "^8.2.2",
     "cors": "^2.8.5",
-    "daisyui": "^4.10.3",
+    "daisyui": "^4.10.5",
     "devcert": "^1.2.2",
     "dotenv": "^16.4.5",
     "eslint": "^8.56.0",
