@@ -4,9 +4,10 @@ import Draggable from 'react-draggable';
 import { BsArrowsExpand } from 'react-icons/bs';
 import { HomeContext, HomeState, THomeState } from './config';
 import Drag from './drag';
+
 import './index.less';
 
-export type TUserProps = {
+export type TTextureProps = {
   base: string;
   alpha?: string;
   bump?: string;
@@ -14,14 +15,23 @@ export type TUserProps = {
   dispImgUrl?: string;
   roughImgUrl?: string;
   normalImgUrl?: string;
+  defaultMapScale?: number;
+  mapScale?: number;
+};
+export type TTranslate = {
+  [key: string]: string;
+};
+export type TUserProps = {
+  texture: TTextureProps;
+  translate?: TTranslate;
 };
 
 const Home = memo(() => {
   const [state, setState] = useState<THomeState>(HomeState);
   const ref = useRef<any>();
 
-  const props = useMemo(() => {
-    const p: TUserProps = {
+  const texture = useMemo(() => {
+    const p: TTextureProps = {
       base: state.baseMap || '',
       bumpScale: state.bumpScale,
     };
@@ -36,9 +46,9 @@ const Home = memo(() => {
 
   useEffect(() => {
     if (ref.current) {
-      ref.current.setProps(props);
+      ref.current.setProps({ texture });
     }
-  }, [props]);
+  }, [texture]);
 
   useEffect(() => {
     const callFunction = async () => {

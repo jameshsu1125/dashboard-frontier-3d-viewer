@@ -18,7 +18,7 @@ const Upload = memo(({ children, uri, onCapture, onCancel }: T) => {
   return (
     <div className={twMerge('flex w-full flex-row items-center space-x-2 py-2')}>
       {uri && (
-        <Button className='h-20 w-20 p-0' onClick={onCancel}>
+        <Button className='h-12 w-12 p-0' onClick={onCancel}>
           <div
             className='flex h-full w-full items-center justify-center bg-contain text-7xl text-transparent hover:text-black'
             style={{ backgroundImage: `url(${uri})` }}
@@ -35,7 +35,7 @@ const Upload = memo(({ children, uri, onCapture, onCancel }: T) => {
             type={DOMString.png}
             onCapture={onCapture}
           >
-            <Button className='join-item btn-block text-xs'>
+            <Button className='join-item btn-md btn-block text-xs'>
               <FaImage />
               {children}
             </Button>

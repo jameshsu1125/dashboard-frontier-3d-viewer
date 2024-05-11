@@ -28,6 +28,27 @@ const Drag = memo(() => {
 
   return (
     <div className='w-full cursor-auto px-5 py-2'>
+      <div className='flex w-full flex-col space-y-2 py-2'>
+        <label>Testing Material Groups</label>
+        <div className='flex w-full flex-wrap'>
+          {[...new Array(9).keys()].map((i) => {
+            return (
+              <div key={i} className='form-control'>
+                <label className='label flex cursor-pointer flex-col space-y-2'>
+                  <span className='label-text'>{`G${i + 1}`}</span>
+                  <input
+                    type='radio'
+                    name='material'
+                    className='radio checked:bg-blue-500'
+                    onChange={onChange}
+                    value={i}
+                  />
+                </label>
+              </div>
+            );
+          })}
+        </div>
+      </div>
       <Upload
         uri={state.baseMap}
         onCancel={() => setState((S) => ({ ...S, baseMap: undefined }))}
@@ -97,27 +118,6 @@ const Drag = memo(() => {
             className='input input-primary'
             onChange={(e) => setScale(Number(e.target.value))}
           />
-        </div>
-      </div>
-      <div className='flex w-full flex-col space-y-2 py-2'>
-        <label>Testing Material Groups</label>
-        <div className='flex w-full'>
-          {[...new Array(4).keys()].map((i) => {
-            return (
-              <div key={i} className='form-control'>
-                <label className='label flex cursor-pointer flex-col space-y-2'>
-                  <span className='label-text'>{`image${i}`}</span>
-                  <input
-                    type='radio'
-                    name='material'
-                    className='radio checked:bg-blue-500'
-                    onChange={onChange}
-                    value={i}
-                  />
-                </label>
-              </div>
-            );
-          })}
         </div>
       </div>
     </div>
