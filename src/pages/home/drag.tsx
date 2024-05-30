@@ -31,7 +31,7 @@ const Drag = memo(() => {
       <div className='flex w-full flex-col space-y-2 py-2'>
         <label>Testing Material Groups</label>
         <div className='flex w-full flex-wrap'>
-          {[...new Array(9).keys()].map((i) => {
+          {[...new Array(10).keys()].map((i) => {
             return (
               <div key={i} className='form-control'>
                 <label className='label flex cursor-pointer flex-col space-y-2'>
