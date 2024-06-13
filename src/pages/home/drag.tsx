@@ -91,13 +91,6 @@ const Drag = memo(() => {
       >
         Upload Normal Map
       </Upload>
-      <Upload
-        uri={state.roughnessMap}
-        onCancel={() => setState((S) => ({ ...S, roughnessMap: undefined }))}
-        onCapture={(e) => setState((S) => ({ ...S, roughnessMap: e.image }))}
-      >
-        Upload Roughness Map
-      </Upload>
 
       <div className='flex w-full flex-col space-y-2 py-2'>
         <label>Bump Scale</label>
