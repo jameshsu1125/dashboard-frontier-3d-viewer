@@ -21,7 +21,7 @@
     "cloudinary": "^2.2.0",
     "draft-js": "^0.11.7",
     "draft-js-export-html": "^1.4.1",
-    "frontier-3d-viewer": "^0.0.83",
+    "frontier-3d-viewer": "^0.0.84",
     "lesca-fetcher": "^1.1.7",
     "lesca-local-storage": "^1.1.2",
     "lesca-react-capture-button": "^2.1.4",
