@@ -1,6 +1,6 @@
 import { memo, useContext, useEffect, useState } from 'react';
 import { useDebounce } from 'use-debounce';
-import { HomeContext, THomeState } from './config';
+import { DATA, HomeContext } from './config';
 import Upload from './upload';
 
 const Drag = memo(() => {
@@ -14,14 +14,7 @@ const Drag = memo(() => {
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
-    const index = Number(value) + 1;
-
-    const data: Omit<THomeState, 'alphaMap' | 'bumpMap' | 'bumpScale'> = {
-      baseMap: `/3d-viewer/mapping/0${index}/base.jpg`,
-      normalMap: `/3d-viewer/mapping/0${index}/nrm.jpg`,
-      roughnessMap: `/3d-viewer/mapping/0${index}/rough.jpg`,
-      displacementMap: `/3d-viewer/mapping/0${index}/disp.jpg`,
-    };
+    const data = DATA[Number(value)];
 
     setState((S) => ({ ...S, ...data }));
   };
@@ -31,9 +24,9 @@ const Drag = memo(() => {
       <div className='flex w-full flex-col space-y-2 py-2'>
         <label>Testing Material Groups</label>
         <div className='flex w-full flex-wrap'>
-          {[...new Array(10).keys()].map((i) => {
+          {DATA.map((data, i) => {
             return (
-              <div key={i} className='form-control'>
+              <div key={JSON.stringify(data)} className='form-control'>
                 <label className='label flex cursor-pointer flex-col space-y-2'>
                   <span className='label-text'>{`G${i + 1}`}</span>
                   <input
