@@ -17,6 +17,7 @@ export type TTextureProps = {
   normalImgUrl?: string;
   defaultMapScale?: number;
   mapScale?: number;
+  normalScale?: number;
 };
 export type TTranslate = {
   [key: string]: string;
@@ -34,6 +35,7 @@ const Home = memo(() => {
     const p: TTextureProps = {
       base: state.baseMap || '',
       bumpScale: state.bumpScale,
+      normalScale: state.normalScale,
     };
     if (state.alphaMap) p.alpha = state.alphaMap;
     if (state.bumpMap) p.bump = state.bumpMap;

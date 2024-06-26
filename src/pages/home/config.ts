@@ -9,11 +9,12 @@ export type THomeState = {
   roughnessMap: HomeMap;
   displacementMap: HomeMap;
   bumpScale: number;
+  normalScale: number;
 };
 
 export type THomeContext = [THomeState, Dispatch<SetStateAction<THomeState>>];
 
-export const HomeState = {
+export const HomeState: THomeState = {
   baseMap: undefined,
   alphaMap: undefined,
   bumpMap: undefined,
@@ -21,11 +22,20 @@ export const HomeState = {
   roughnessMap: undefined,
   displacementMap: undefined,
   bumpScale: 0.05,
+  normalScale: 0.5,
 };
 
 export const HomeContext = createContext<THomeContext>([HomeState, () => {}]);
 
 export const DATA = [
+  {
+    baseMap: `/3d-viewer/mapping/B335E6/base.jpg`,
+    normalMap: `/3d-viewer/mapping/B335E6/nrm.jpg`,
+    roughnessMap: `/3d-viewer/mapping/B335E6/rough.jpg`,
+    displacementMap: `/3d-viewer/mapping/B335E6/disp.jpg`,
+    alphaMap: `/3d-viewer/mapping/B335E6/alpha.jpg`,
+    bumpMap: `/3d-viewer/mapping/B335E6/metal.jpg`,
+  },
   {
     baseMap: `/3d-viewer/mapping/0/base.jpg`,
     normalMap: `/3d-viewer/mapping/0/nrm.jpg`,

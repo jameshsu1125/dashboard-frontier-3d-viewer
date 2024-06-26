@@ -6,16 +6,21 @@ import Upload from './upload';
 const Drag = memo(() => {
   const [state, setState] = useContext(HomeContext);
   const [scale, setScale] = useState(state.bumpScale);
+  const [normalScale, setNormalScale] = useState(state.normalScale);
   const [value] = useDebounce(scale, 100);
+  const [normalValue] = useDebounce(normalScale, 100);
 
   useEffect(() => {
     setState((S) => ({ ...S, bumpScale: value }));
   }, [value]);
 
+  useEffect(() => {
+    setState((S) => ({ ...S, normalScale: normalValue }));
+  }, [normalValue]);
+
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
     const data = DATA[Number(value)];
-
     setState((S) => ({ ...S, ...data }));
   };
 
@@ -103,6 +108,28 @@ const Drag = memo(() => {
             value={value}
             className='input input-primary'
             onChange={(e) => setScale(Number(e.target.value))}
+          />
+        </div>
+      </div>
+
+      <div className='flex w-full flex-col space-y-2 py-2'>
+        <label>Normal Scale</label>
+        <div className='join flex flex-col space-y-2'>
+          <input
+            type='range'
+            min={0}
+            max='100'
+            defaultValue={state.normalScale * 100}
+            className='range range-primary'
+            onChange={(e) => {
+              setNormalScale(Number(e.target.value) / 100);
+            }}
+          />
+          <input
+            type='number'
+            value={normalValue}
+            className='input input-primary'
+            onChange={(e) => setNormalScale(Number(e.target.value))}
           />
         </div>
       </div>
