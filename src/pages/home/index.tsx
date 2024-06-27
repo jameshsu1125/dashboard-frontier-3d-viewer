@@ -54,7 +54,7 @@ const Home = memo(() => {
 
   useEffect(() => {
     const callFunction = async () => {
-      const viewer = (await import('frontier-3d-viewer')).default;
+      const viewer = (await import('../../../lib/index')).default;
       ref.current = viewer;
       viewer.render();
     };
