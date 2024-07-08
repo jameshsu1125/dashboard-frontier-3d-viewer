@@ -8,12 +8,13 @@
     "dev:serve": "concurrently \"npm run dev\" \"npm run serve\"",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "rm": "rm -rf lib/",
+    "rm": "rm -rf node_modules/ dist/ package-lock.json",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "deploy": "NODE_ENV=production netlify deploy --dir=dist --prod",
     "demo": "NODE_ENV=production netlify deploy --dir=dist",
     "serve": "NODE_ENV=local netlify dev --dir=dist",
-    "copy": "rm -rf public/3d-viewer && cp -R ./node_modules/frontier-3d-viewer/lib/3d-viewer ./public"
+    "copy": "rm -rf public/3d-viewer && cp -R ./node_modules/frontier-3d-viewer/lib/3d-viewer ./public",
+    "test": "rm -rf lib/ && cp -R ./../frontier-3d-viewer/lib/ ./lib"
   },
   "dependencies": {
     "@faker-js/faker": "^8.4.1",
