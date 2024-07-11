@@ -22,7 +22,7 @@ export const HomeState: THomeState = {
   roughnessMap: undefined,
   displacementMap: undefined,
   bumpScale: 0.05,
-  normalScale: 0.5,
+  normalScale: 0.2,
 };
 
 export const HomeContext = createContext<THomeContext>([HomeState, () => {}]);
@@ -35,6 +35,7 @@ export const DATA = [
     displacementMap: `/3d-viewer/mapping/20240410011320_F041013017317_202404100926293876/disp.png`,
     alphaMap: undefined,
     bumpMap: undefined,
+    color: undefined,
   },
   {
     baseMap: `/3d-viewer/mapping/20240425054922_F042555395107_202404251355493448/base.png`,
@@ -43,6 +44,7 @@ export const DATA = [
     displacementMap: `/3d-viewer/mapping/20240425054922_F042555395107_202404251355493448/disp.png`,
     alphaMap: undefined,
     bumpMap: undefined,
+    color: undefined,
   },
   {
     baseMap: `/3d-viewer/mapping/20240513140647_F051333144002_202407021551178983/base.png`,
@@ -51,6 +53,7 @@ export const DATA = [
     displacementMap: `/3d-viewer/mapping/20240513140647_F051333144002_202407021551178983/disp.png`,
     alphaMap: `/3d-viewer/mapping/20240513140647_F051333144002_202407021551178983/alpha.png`,
     bumpMap: `/3d-viewer/mapping/20240513140647_F051333144002_202407021551178983/metal.png`,
+    color: undefined,
   },
   {
     baseMap: `/3d-viewer/mapping/G-star 2_F776629520328_202407021815166313/base.png`,
@@ -59,6 +62,7 @@ export const DATA = [
     displacementMap: `/3d-viewer/mapping/G-star 2_F776629520328_202407021815166313/disp.png`,
     alphaMap: `/3d-viewer/mapping/G-star 2_F776629520328_202407021815166313/alpha.png`,
     bumpMap: `/3d-viewer/mapping/G-star 2_F776629520328_202407021815166313/metal.png`,
+    color: undefined,
   },
   {
     baseMap: `/3d-viewer/mapping/G-star_F070291070302_202407021540089378/base.png`,
@@ -67,6 +71,7 @@ export const DATA = [
     displacementMap: `/3d-viewer/mapping/20240513140647_F051333144002_202407021551178983/disp.png`,
     alphaMap: `/3d-viewer/mapping/G-star_F070291070302_202407021540089378/alpha.png`,
     bumpMap: `/3d-viewer/mapping/G-star_F070291070302_202407021540089378/metal.png`,
+    color: undefined,
   },
   {
     baseMap: `/3d-viewer/mapping/Ugly-F062721028810-202406271543281323/base.png`,
@@ -75,6 +80,7 @@ export const DATA = [
     displacementMap: `/3d-viewer/mapping/Ugly-F062721028810-202406271543281323/disp.png`,
     alphaMap: `/3d-viewer/mapping/Ugly-F062721028810-202406271543281323/alpha.png`,
     bumpMap: `/3d-viewer/mapping/Ugly-F062721028810-202406271543281323/metal.png`,
+    color: undefined,
   },
   {
     baseMap: `/3d-viewer/mapping/B335E6/base.jpg`,
@@ -83,6 +89,7 @@ export const DATA = [
     displacementMap: `/3d-viewer/mapping/B335E6/disp.jpg`,
     alphaMap: `/3d-viewer/mapping/B335E6/alpha.jpg`,
     bumpMap: `/3d-viewer/mapping/B335E6/metal.jpg`,
+    color: undefined,
   },
   {
     baseMap: `/3d-viewer/mapping/0/base.jpg`,
@@ -91,6 +98,7 @@ export const DATA = [
     displacementMap: `/3d-viewer/mapping/0/disp.jpg`,
     alphaMap: undefined,
     bumpMap: undefined,
+    color: undefined,
   },
   {
     baseMap: `/3d-viewer/mapping/1/base.jpg`,
@@ -99,6 +107,7 @@ export const DATA = [
     displacementMap: `/3d-viewer/mapping/1/disp.jpg`,
     alphaMap: undefined,
     bumpMap: undefined,
+    color: undefined,
   },
   {
     baseMap: `/3d-viewer/mapping/2/base.jpg`,
@@ -107,6 +116,7 @@ export const DATA = [
     displacementMap: `/3d-viewer/mapping/3/disp.jpg`,
     alphaMap: undefined,
     bumpMap: undefined,
+    color: undefined,
   },
   {
     baseMap: `/3d-viewer/mapping/4/base.jpg`,
@@ -115,6 +125,7 @@ export const DATA = [
     displacementMap: `/3d-viewer/mapping/4/disp.jpg`,
     alphaMap: undefined,
     bumpMap: undefined,
+    color: undefined,
   },
   {
     baseMap: `/3d-viewer/mapping/5/base.jpg`,
@@ -123,6 +134,7 @@ export const DATA = [
     displacementMap: `/3d-viewer/mapping/5/disp.jpg`,
     alphaMap: undefined,
     bumpMap: undefined,
+    color: undefined,
   },
   {
     baseMap: `/3d-viewer/mapping/6/base.jpg`,
@@ -131,6 +143,7 @@ export const DATA = [
     displacementMap: `/3d-viewer/mapping/6/disp.jpg`,
     alphaMap: undefined,
     bumpMap: undefined,
+    color: undefined,
   },
   {
     baseMap: `/3d-viewer/mapping/7/base.jpg`,
@@ -139,6 +152,7 @@ export const DATA = [
     displacementMap: `/3d-viewer/mapping/7/disp.jpg`,
     alphaMap: undefined,
     bumpMap: undefined,
+    color: undefined,
   },
   {
     baseMap: `/3d-viewer/mapping/8/base.jpg`,
@@ -147,6 +161,7 @@ export const DATA = [
     displacementMap: `/3d-viewer/mapping/8/disp.jpg`,
     alphaMap: undefined,
     bumpMap: undefined,
+    color: undefined,
   },
   {
     baseMap: `/3d-viewer/mapping/9/base.jpg`,
@@ -155,6 +170,7 @@ export const DATA = [
     displacementMap: `/3d-viewer/mapping/9/disp.jpg`,
     alphaMap: undefined,
     bumpMap: undefined,
+    color: undefined,
   },
   {
     baseMap: `/3d-viewer/mapping/416568/base.jpeg`,
@@ -163,6 +179,7 @@ export const DATA = [
     displacementMap: `/3d-viewer/mapping/416568/disp.jpg`,
     alphaMap: `/3d-viewer/mapping/416568/alpha.jpg`,
     bumpMap: `/3d-viewer/mapping/416568/metal.jpg`,
+    color: undefined,
   },
   {
     baseMap: `/3d-viewer/mapping/ED27343/base.jpg`,
@@ -171,11 +188,13 @@ export const DATA = [
     displacementMap: `/3d-viewer/mapping/ED27343/disp.jpg`,
     alphaMap: `/3d-viewer/mapping/ED27343/alpha.jpg`,
     bumpMap: `/3d-viewer/mapping/ED27343/metal.jpg`,
+    color: undefined,
   },
   {
     baseMap: `/3d-viewer/mapping/n/base.jpg`,
     normalMap: `/3d-viewer/mapping/n/nrm.jpg`,
     roughnessMap: `/3d-viewer/mapping/n/rough.jpg`,
     displacementMap: `/3d-viewer/mapping/n/disp.jpg`,
+    color: undefined,
   },
 ];
