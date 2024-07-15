@@ -29,6 +29,22 @@ export const HomeContext = createContext<THomeContext>([HomeState, () => {}]);
 
 export const DATA = [
   {
+    baseMap:
+      'https://textile.frontier.cool/Resource/MaterialU3M/U3M/654325-F071188689791-202407111601143596/textures/base.jpg',
+    alphaMap: undefined,
+    bumpMap: undefined,
+    normalMap:
+      'https://textile.frontier.cool/Resource/MaterialU3M/U3M/654325-F071188689791-202407111601143596/textures/nrm.jpg',
+    roughMap:
+      'https://textile.frontier.cool/Resource/MaterialU3M/U3M/654325-F071188689791-202407111601143596/textures/rough.jpg',
+    dispMap:
+      'https://textile.frontier.cool/Resource/MaterialU3M/U3M/654325-F071188689791-202407111601143596/textures/disp.jpg',
+    color: undefined,
+    dpi: 600,
+    offset: { x: 0, y: 0 },
+    normalScale: 1,
+  },
+  {
     baseMap: `/3d-viewer/mapping/20240410011320_F041013017317_202404100926293876/base.png`,
     normalMap: `/3d-viewer/mapping/20240410011320_F041013017317_202404100926293876/nrm.png`,
     roughnessMap: `/3d-viewer/mapping/20240410011320_F041013017317_202404100926293876/rough.png`,
